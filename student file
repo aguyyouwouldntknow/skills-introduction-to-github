@@ -1,0 +1,76 @@
+# Initial list of students
+students = ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah", "Ian", "Judy"]
+
+def display_students():
+    print(f"_____________________________________")
+    print(f"Current students:")
+    for student in students:
+        print(student)
+    print(f"_____________________________________") 
+
+# Add a new student to the list
+def add_student():
+    name = input("Enter the student's name to add: ")
+    students.append(name)
+    print(f"{name} has been added.")
+    display_students()
+
+# Remove a student from the list by name
+def remove_student():
+    name = input("Enter the student's name to remove: ")
+    if name in students:
+        students.remove(name)
+        print(f"{name} has been removed.")
+    else:
+        print(f"Error: {name} not found.")
+    display_students()
+
+# Remove a student from the end of the list
+def pop_student():
+    if students:
+        removed_student = students.pop()
+        print(f"{removed_student} has been removed from the end of the list.")
+    else:
+        print("No students left to remove.")
+    display_students()
+
+# Update a student's name in the list
+def update_student():
+    current_name = input("Enter the current name of the student: ")
+    if current_name in students:
+        new_name = input("Enter the new name for the student: ")
+        index = students.index(current_name)
+        students[index] = new_name
+        print(f"{current_name} has been updated to {new_name}.")
+    else:
+        print(f"Error: {current_name} not found.")
+    display_students()
+
+# Menu to manage student operations
+def menu():
+    while True:
+        print("\nMenu:")
+        print("1. Add a student")
+        print("2. Remove a student")
+        print("3. Pop a student")
+        print("4. Update a student's name")
+        print("5. Display students")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_student()
+        elif choice == '2':
+            remove_student()
+        elif choice == '3':
+            pop_student()
+        elif choice == '4':
+            update_student()
+        elif choice == '5':
+            display_students()
+        elif choice == '6':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
