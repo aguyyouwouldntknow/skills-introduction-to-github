@@ -1,0 +1,34 @@
+# Dictionary containing vehicle information
+vehicles = {
+    # VIN: [year, manufacturer, model, color, eng_design, eng_displace]
+    "1J4GL48K4UF993861": [2002, "Jeep", "Liberty", "blue", "V6", 3.7],
+    "1YVGF22C8AN381568": [2002, "Mazda", "626", "white", "I4", 2.0],
+    "WP0AA0926HG410293": [1987, "Porsche", "924S", "red", "I4", 2.5],
+    "5TDZA23CXTU102983": [2006, "Toyota", "Sienna", "gold", "V6", 3.3],
+    "1GKKVRED5ZL382610": [2011, "GMC", "Acadia", "charcoal", "V6", 3.5],
+    "2T3BF4DV9QR146782": [2012, "Toyota", "RAV 4", "green", "I4", 2.5]
+}
+
+def main():
+    # Ask user for the VIN
+    vin = input("Please enter the vehicle identification number (VIN): ")
+
+    # Check if the VIN exists in the vehicles dictionary
+    if vin in vehicles:
+        # Get the vehicle information
+        info = vehicles[vin]
+        # Print the information in a readable format
+        print(f"Vehicle Information for VIN {vin}:")
+        print(f"Year: {info[0]}")
+        print(f"Manufacturer: {info[1]}")
+        print(f"Model: {info[2]}")
+        print(f"Color: {info[3]}")
+        print(f"Engine Design: {info[4]}")
+        print(f"Engine Displacement: {info[5]}L")
+    else:
+        # VIN does not exist
+        print(f"The VIN {vin} is not in the dictionary.")
+
+# Run the main function
+if __name__ == "__main__":
+    main()
