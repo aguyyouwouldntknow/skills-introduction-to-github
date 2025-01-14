@@ -1,0 +1,79 @@
+import tkinter
+
+def sum():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a + b
+    result_label.config(text=c)
+
+def sub():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a - b
+    result_label.config(text=c)
+
+def mul():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a * b
+    result_label.config(text=c)
+
+def div():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a / b
+    result_label.config(text=c)
+
+
+def exp():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a ** b
+    result_label.config(text=c)
+
+def con():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = str(a) + str(b)
+    result_label.config(text=c)
+def groot():
+    a = int(entry1.get())
+    b = int(entry2.get())
+    c = a ** b (1/2)
+    result_label.config(text=c)
+    
+root = tkinter.Tk()
+
+
+root.title("Calculator")
+root.geometry("400x400")
+
+label1 = tkinter.Label(root, text="First number")
+label1.pack()
+entry1 = tkinter.Entry(root)
+entry1.pack()
+
+label2 = tkinter.Label(root, text="Second number")
+label2.pack()
+entry2 = tkinter.Entry(root)
+entry2.pack()
+
+button_sum = tkinter.Button(root, text="Sum",command=sum)
+button_sum.pack()
+button_sub = tkinter.Button(root, text="Subtract", command=sub)
+button_sub.pack()
+button_mul = tkinter.Button(root, text="Multiply", command=mul)
+button_mul.pack()
+button_div = tkinter.Button(root, text="Divide", command=div)
+button_div.pack()
+button_exp = tkinter.Button(root, text="Exponentiate", command=exp)
+button_exp.pack()
+button_con = tkinter.Button(root, text="Concatenation", command=con)
+button_con.pack()
+button_groot = tkinter.Button(root, text="General Root", command=groot)
+button_groot.pack()
+
+result_label = tkinter.Label(root, text="")
+result_label.pack()
+
+root.mainloop()
